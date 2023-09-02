@@ -1,8 +1,8 @@
-import styles from './Home.module.css'
+import styles from './Home.module.css';
 
 export const Home = () => {
     return (
-        <section className={styles.home_container}>
+      <section className={styles.home_container}>
         <h1>
           Bem-vindo Claudimir ao <span>Barber Shop</span>
         </h1>

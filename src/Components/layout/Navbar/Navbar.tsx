@@ -31,6 +31,9 @@ function Navbar() {
           <li className={styles.item}>
             <Link to="/contract">Contrato</Link>
           </li>
+          <li className={styles.item}>
+            <Link to="/logout">Sair</Link>
+          </li>
         </ul>
       </Container>
     </div>
