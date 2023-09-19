@@ -22,11 +22,6 @@ export const Login = () => {
     }
 
     return (
-        // <div className={styles.login_container}>
-        //     <h1>Por favor digite suas credenciais</h1>
-        //     <SigninForm handleSubmit={createPost} btnText="Entrar" />
-        // </div>
-
         <section className={styles.login_container}>
             <h1>
                 Por favor digite suas credenciais
