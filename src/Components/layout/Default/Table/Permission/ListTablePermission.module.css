@@ -1,0 +1,24 @@
+.newproject_container {
+    padding: 1em;
+  }
+  
+  .newproject_container h1 {
+    margin-bottom: 0.5em;
+  }
+  
+  .newproject_container p {
+    color: #7b7b7b;
+  }
+  
+  .login_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4em;
+  }
+  
+  .card_header {
+    display: flex;
+    justify-content: space-between;
+  }

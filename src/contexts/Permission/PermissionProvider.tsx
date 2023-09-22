@@ -1,21 +1,23 @@
-import { useState } from "react";
+import { Permission } from "../../hooks/Permission";
 import { PermissionRequest } from "../../types/Permission";
 import { permissionContext } from "./PermissionContext";
-import { Permission } from "../../hooks/Permission";
 
-
-export const PermissionProvider = ({ children }: { children: JSX.Element }) => {
-    // const [request, setPermissionRequest] = useState<PermissionRequest | null>(null);
+export const PermissionProvider = ({ children }: { children: JSX.Element; }) => {
     const api = Permission();
 
     const createByPermission = async (request: PermissionRequest) => {
-        api.create(request);
-        return false;
-    }
+        var permissionResponse = await api.create(request);
+        return permissionResponse;
+    };
+
+    const getAllPermission = async () => {
+        var permissionResponse = await api.getAll();
+        return permissionResponse;
+    };
 
     return (
-        <permissionContext.Provider value={{createByPermission}}>
+        <permissionContext.Provider value={{createByPermission, getAllPermission}}>
             {children}
         </permissionContext.Provider>
     );
-}
+};

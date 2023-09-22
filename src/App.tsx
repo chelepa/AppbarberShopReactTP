@@ -14,7 +14,7 @@ import { useContext } from 'react';
 import { authenticationContext } from './contexts/Authentication/AuthenticationContext';
 import { Login } from './Components/pages/Login/Login';
 import { Logout } from './Components/pages/Logout/logout';
-import { PermissionProvider } from './contexts/Permission/PermissionProvider';
+import { PermissionProvider } from "./contexts/Permission/PermissionProvider";
 
 function App() {
 
@@ -40,7 +40,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/users" element={<Users />} />
             <Route path="/group" element={<Group />} />
-            <Route path="/permission" element={<Permission />} />
+            <Route path="/permission" element={<PermissionProvider><Permission /></PermissionProvider>} />
             <Route path="/permission/create" element={ <PermissionProvider><PermissionCreate /></PermissionProvider>} />
             <Route path="/schedule" element={<Schedule />} />
             <Route path="/services" element={<Services />} />
