@@ -15,10 +15,15 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 4em;
+  /* padding: 4em; */
 }
 
 .card_header {
   display: flex;
   justify-content: space-between;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
 }
