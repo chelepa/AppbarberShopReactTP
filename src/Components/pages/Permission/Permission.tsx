@@ -7,9 +7,7 @@ import LinkButton from "../../layout/Default/LinkButton/LinkButton";
 
 export const Permission = () => {
   const context = useContext(permissionContext);
-  const [permissionList, setPermissionResponse] = React.useState(
-    Array<PermissionResponse>
-  );
+  const [permissionList, setPermissionResponse] = React.useState(Array<PermissionResponse>);
 
   useEffect(() => {
     const list = context.getAllPermission();
@@ -20,7 +18,7 @@ export const Permission = () => {
       });
     };
 
-    printTable();
+    return printTable();
   }, []);
 
   return (
@@ -39,7 +37,7 @@ export const Permission = () => {
           </div>
         </div>
         <div className="card-body">
-          <div className="overflow-auto">
+          <div className={styles.card_body}>
             <table className="table ">
               <thead>
                 <tr>

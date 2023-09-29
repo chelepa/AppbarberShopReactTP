@@ -15,7 +15,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* padding: 4em; */
 }
 
 .card_header {
@@ -26,4 +25,9 @@
 .App {
   font-family: sans-serif;
   text-align: center;
+}
+
+.card_body{
+  overflow: auto;
+  height: 450px;
 }

@@ -17,8 +17,3 @@ export const ListTablePermission = ({ id, permission, description}: { id: BigInt
   </tr>
   );
 };
-
-
-// https://www.flaticon.com/br/icone-gratis/retomar_4453375?term=editar&related_id=4453375
-// https://www.flaticon.com/br/icone-gratis/arquivo_3143535?term=excluir&related_id=3143535
-// https://www.flaticon.com/br/icone-gratis/adicionar-ficheiro_1091585?term=adicionar&related_id=1091585

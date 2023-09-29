@@ -16,7 +16,7 @@ export const Permission = () => {
     return ({
         create: async (request: PermissionRequest) => {
             const response = await api.post("/v1/permission", JSON.stringify(request), config);
-            return response.data;
+            return response;
         },
         getAll: async () => {
             const response = await api.get("/v1/permission", config);
