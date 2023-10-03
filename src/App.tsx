@@ -40,7 +40,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/users" element={<Users />} />
             <Route path="/group" element={<Group />} />
-            <Route path="/permission" element={<PermissionProvider><Permission /></PermissionProvider>} />
+            <Route path="/permission" element={<PermissionProvider><Permission/></PermissionProvider>} />
             <Route path="/permission/create" element={ <PermissionProvider><PermissionCreate /></PermissionProvider>} />
             <Route path="/schedule" element={<Schedule />} />
             <Route path="/services" element={<Services />} />

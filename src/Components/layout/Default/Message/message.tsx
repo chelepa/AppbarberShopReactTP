@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./Message.module.css";
-import { useEffect, useState } from "react";
+import { useEffect} from "react";
 
-function message({ msg, type }: { msg: string; type: string }) {
-    const [visible, setVisible] = React.useState(false)
+function Message({ msg, type }: { msg: string; type: string }) {
+    const [visible, setVisible] = React.useState({})
 
     useEffect(() => {
         if (!msg){
@@ -15,7 +15,7 @@ function message({ msg, type }: { msg: string; type: string }) {
 
         const timer = setTimeout(() => {
             setVisible(false)
-        }, 30000000)
+        }, 3000)
 
         return () => clearTimeout(timer)
 
@@ -28,4 +28,4 @@ function message({ msg, type }: { msg: string; type: string }) {
     </>)
 }
 
-export default message;
+export default Message;

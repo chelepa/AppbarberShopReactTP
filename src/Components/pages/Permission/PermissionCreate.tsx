@@ -1,37 +1,37 @@
-import { useContext, useState } from 'react';
-import {PermissionRequest } from '../../../types/Permission';
-import PermissionForm from '../../layout/Default/Forms/PermissionForm';
-import styles from './PermissionCreate.module.css'
-import { permissionContext } from '../../../contexts/Permission/PermissionContext';
-import Message from '../../layout/Default/Message/message';
+import styles from "./PermissionCreate.module.css";
+import { useContext } from "react";
+import { PermissionRequest } from "../../../types/Permission";
+import PermissionForm from "../../layout/Default/Forms/PermissionForm";
+import { permissionContext } from "../../../contexts/Permission/PermissionContext";
+import { useNavigate } from "react-router-dom";
 
 export const PermissionCreate = () => {
-    const context = useContext(permissionContext);
-    const [message, setMessage] = useState("")
-    const [type1, setType1] = useState("")
-    const [status, setStatus] = useState("")
+  const context = useContext(permissionContext);
+  const navigate = useNavigate();
 
-    const createPost = async (request: PermissionRequest) => {
-      context.createByPermission(request).then((response) => {
-        if (response["status"] === 201) {
-          setMessage("Criado Com Sucesso");
-          setType1("sucess");
-          setStatus(response["status"]);
-        } else {
-          setMessage("Erro Ao Cadastrar");
-          setType1("error");
-          setStatus(response["status"]);
-        }
-      });
-    };
+  const createPost = async (request: PermissionRequest) => {
+    context.createByPermission(request).then((response) => {
+      let message = "";
+      let type = "";
+      if (response["status"] === 201) {
+        message = "Criado Com Sucesso";
+        type = "sucess";
+      } else {
+        message = "Erro Ao Cadastrar";
+        type = "error";
+      }
+      return navigate("/permission", {state: {"message": message, "type": type}});
+    });
+  };
 
-    return (
-        <div className={styles.newproject_container}>
-            <div>
-              {status && <Message msg={message} type={type1}/>} 
-            </div>
-            <h1>Cadastro de Permissão</h1>
-            <PermissionForm handleSubmit={createPost} btnText="Criar Permissão" permissionData={null}/>
-        </div>
-    )
-}
+  return (
+    <div className={styles.newproject_container}>
+      <h1>Cadastro de Permissão</h1>
+      <PermissionForm
+        handleSubmit={createPost}
+        btnText="Criar Permissão"
+        permissionData={null}
+      />
+    </div>
+  );
+};
