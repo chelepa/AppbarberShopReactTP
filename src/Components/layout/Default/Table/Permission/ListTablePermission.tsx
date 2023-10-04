@@ -1,5 +1,6 @@
 import IconEdit from "../../../../../icons/IconEdit.png"
 import IconDelete from "../../../../../icons/IconDelete.png"
+import LinkIcon from '../../LinkIcon/LinkIcon';
 
 
 export const ListTablePermission = ({ id, permission, description}: { id: BigInteger, permission: string, description: string }) => {
@@ -10,8 +11,8 @@ export const ListTablePermission = ({ id, permission, description}: { id: BigInt
     <td>{description}</td>
     <td>
       <div>
-        <img src={IconEdit} alt="Costs" />
-        <img src={IconDelete} alt="Costs" />
+        <LinkIcon to="/" IconEdit={IconEdit}/>
+        <LinkIcon to="/" IconEdit={IconDelete}/>
       </div>
     </td>
   </tr>

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { permissionContext } from "../../../contexts/Permission/PermissionContext";
 import { PermissionResponse } from "../../../types/Permission";
 import { ListTablePermission } from "../../layout/Default/Table/Permission/ListTablePermission";
@@ -8,11 +8,17 @@ import Message from '../../layout/Default/Message/message';
 import { useLocation } from 'react-router-dom';
 
 
+
 export const Permission = () => {
   const context = useContext(permissionContext);
   const [permissionList, setPermissionResponse] = React.useState(Array<PermissionResponse>);
-  const search = useLocation();
   const [visible, setVisible] = React.useState(false)
+  const search = useLocation();
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   useEffect(() => {
     if (search.state != null) {
@@ -31,6 +37,7 @@ export const Permission = () => {
   }, []);
 
   return (
+    
     <section className={styles.login_container}>
       <div>{visible && <Message msg={search.state.message} type={search.state.type} />}</div>
       <div className={styles.newproject_container}>

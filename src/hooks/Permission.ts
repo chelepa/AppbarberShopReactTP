@@ -21,6 +21,10 @@ export const Permission = () => {
         getAll: async () => {
             const response = await api.get("/v1/permission", config);
             return response.data;
+        },
+        deleteById: async (id: String) => {
+            const response = await api.delete(`/v1/permission/${id}`, config);
+            return response.data;
         }
     });
 };
